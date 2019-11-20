@@ -1,20 +1,36 @@
-// var cursor = document.getElementById('injectedEl')[0];
+//create the 'cursor' element that we will inject
+var cursor = document.createElement('div');
+cursor.id = 'injectedEl';
+cursor.style.position = 'fixed';
+cursor.style.top = 0;
+cursor.style.right = 0;
+cursor.style.background = 'blue';
+cursor.style.zIndex = 2147483647;
+cursor.textContent = 'Injected!';
 
-// alert(cursor.textContent);
+// remember to add "inject.js" to web_accessible_resources in manifest.json
+cursor.src = chrome.runtime.getURL('inject.js');
 
-var div = document.createElement('div');
-div.id = 'injectedEl';
-div.style.position = 'fixed';
-div.style.top = 0;
-div.style.right = 0;
-div.style.background = 'blue';
-div.style.zIndex = 2147483647;
-div.textContent = 'Injected!';
-
-// TODO: add "script.js" to web_accessible_resources in manifest.json
-div.src = chrome.runtime.getURL('inject.js');
-
-div.onload = function() {
+cursor.onload = function() {
     this.remove();
 };
-document.body.appendChild(div);
+
+document.body.appendChild(cursor);
+//note: you can still use the cursor object to access it even after it's injected! yay!
+
+//to make the cursor move
+
+//todo add null check
+cursor.style.top = parseInt(cursor.style.top) + 10 + 'px';
+
+
+// function shake(interval) {
+//   obj.style.right = '10px';
+//   setTimeout(function(){
+//       obj.style.right = '0px';
+//   }, interval);
+// }
+
+// setInterval(function(){
+//   shake(500);
+// }, 1000)
