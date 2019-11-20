@@ -2,19 +2,13 @@
     "name": "Muse Extension",
     "version": "1.0",
     "description": "Extension to browse the web using the Muse headset",
-    "permissions": ["storage", "input"],
+    "permissions": ["storage", "input", "activeTab", "*://*/*"],
     "background": {
       "scripts": ["background.js"],
       "persistent": false
     }, 
-    "commands": {
-      "next-element": {
-        "suggested_key": {
-          "default": "Ctrl+Shift+Y",
-          "mac": "Command+Shift+Y"
-        },
-        "description": "Next element"
-      }
+    "browser_action": {
+      "default_title": "Inject!"
     },
     "content_scripts": [
         {
