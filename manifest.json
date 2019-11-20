@@ -16,7 +16,7 @@
           "js": ["contentScript.js"]
         }
       ],
-    "web_accessible_resources": ["inject.js"],
+    "web_accessible_resources": ["inject.js", "img/cursor.png", "img/cursor_10px.png", "img/cursor_15px.png"],
     "manifest_version": 2
   }
   

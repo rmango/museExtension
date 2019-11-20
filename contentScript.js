@@ -4,12 +4,12 @@ cursor.id = 'injectedEl';
 cursor.style.position = 'fixed';
 cursor.style.top = 0;
 cursor.style.right = 0;
-cursor.style.background = 'blue';
 cursor.style.zIndex = 2147483647;
-cursor.textContent = 'Injected!';
 
-// remember to add "inject.js" to web_accessible_resources in manifest.json
-cursor.src = chrome.runtime.getURL('inject.js');
+var mouseImg = document.createElement('img');
+mouseImg.src = chrome.runtime.getURL('img/cursor_15px.png');
+mouseImg.style.width = '10';
+cursor.appendChild(mouseImg);
 
 cursor.onload = function() {
     this.remove();
@@ -25,4 +25,5 @@ cursor.style.top = parseInt(cursor.style.top) + 10 + 'px';
 
 setInterval(function(){
   cursor.style.top = parseInt(cursor.style.top) + 10 + 'px';
+  cursor.style.right = parseInt(cursor.style.top) + 10 + 'px';
 }, 1000)
