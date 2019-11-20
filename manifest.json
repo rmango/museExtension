@@ -16,6 +16,8 @@
           "js": ["contentScript.js"]
         }
       ],
+      
+  "web_accessible_resources": ["inject.js"],
     "manifest_version": 2
   }
   

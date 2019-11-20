@@ -1,8 +1,7 @@
-// this is the code which will be injected into a given page...
 
 (function() {
 
-	// just place a div at top right
+	// create div
     var div = document.createElement('div');
     div.id = 'injectedEl';
 	div.style.position = 'fixed';
