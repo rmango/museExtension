@@ -23,14 +23,6 @@ document.body.appendChild(cursor);
 //todo add null check
 cursor.style.top = parseInt(cursor.style.top) + 10 + 'px';
 
-
-// function shake(interval) {
-//   obj.style.right = '10px';
-//   setTimeout(function(){
-//       obj.style.right = '0px';
-//   }, interval);
-// }
-
-// setInterval(function(){
-//   shake(500);
-// }, 1000)
+setInterval(function(){
+  cursor.style.top = parseInt(cursor.style.top) + 10 + 'px';
+}, 1000)
